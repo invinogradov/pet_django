@@ -1,0 +1,27 @@
+{% extends 'list.html' %}
+
+{% block add_button %}
+    <a class="btn btn-primary" href="{% url 'faces_list' %}" role="button">Добавить сотрудника</a>
+{% endblock add_button %}
+{% block result_list %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Должность</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in staff %}
+            <tr>
+                <td>
+                    <a href="{{ item.get_absolute_url }}">{{ item.face.surname }} {{ item.face.name }} {{ item.face.patronymic }}</a>
+                </td>
+                <td>
+                    {{ item.get_post_display }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock result_list %}

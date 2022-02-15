@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="mt-3">
+        <a class="btn btn-primary" href="{% url 'add_visit' %}" role="button">Записать на приём</a>
+        <a class="btn btn-primary" href="{% url 'patient_visits_list' patient.pk %}" role="button">Список приёмов</a>
+        <div class="container">
+            <div class="row">
+                <div class="content">
+                    Физ.лицо: <a href="{{ patient.face.get_absolute_url }}"> {{ patient.face }} </a>
+                </div>
+                <div class="content">
+                    Группа крови: {{ patient.get_blood_type_display }}
+                </div>
+                <div class="content">
+                    ВИЧ статус: {{ patient.get_hiv_status_display }}
+                </div>
+                <div class="content">
+                    Рост: {{ patient.height }}
+                </div>
+                <div class="content">
+                    Вес: {{ patient.weight }}
+                </div>
+                <div class="content">
+                    Телефон: {{ patient.face.phone }}
+                </div>
+                <div class="content">
+                    ОМС: {{ patient.required_medical_policy }}
+                </div>
+                <div class="content">
+                    ДМС: {{ patient.add_medical_policy }}
+                </div>
+                <div class="content">
+                    Аллергии: {{ patient.allergies }}
+                </div>
+                <div class="content">
+                    Заметки: {{ patient.notes }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

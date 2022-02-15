@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                ФИО: {{ face.surname }} {{ face.name }} {{ face.patronymic }}
+            </div>
+            <div class="content">
+                Пол: {{ face.get_gender_display }}
+            </div>
+            <div class="content">
+                СНИЛС: {{ face.snils }}
+            </div>
+            <div class="content">
+                ИНН: {{ face.inn }}
+            </div>
+            <div class="content">
+                Дата рождения: {{ face.date_of_birth }}
+            </div>
+            <div class="content">
+                Прописка: {{ face.registration }}
+            </div>
+            <div class="content">
+                Телефон: {{ face.phone }}
+            </div>
+            <div class="content">
+                Email: {{ face.email }}
+            </div>
+            <div class="content">
+                Вид документа: {{ face.get_doc_type_display }}
+            </div>
+            <div class="content">
+                Серия: {{ face.doc_series }}
+            </div>
+            <div class="content">
+                Номер: {{ face.doc_number }}
+            </div>
+            <div class="content">
+                Дата выдачи: {{ face.doc_date }}
+            </div>
+            <div class="content">
+                Кем выдан: {{ face.doc_given }}
+            </div>
+            <div class="content">
+                Код подразделения: {{ face.doc_code_division }}
+            </div>
+            <div class="content">
+                Заметки: {{ face.notes }}
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

@@ -1,0 +1,17 @@
+/.idea
+/venv
+/hospital/__pycache__
+/hospital/static
+/hospital/hospital/static
+hospital/hospital/__pycache__/__init__.cpython-38.pyc
+hospital/hospital/__pycache__/settings.cpython-38.pyc
+hospital/hospital/__pycache__/urls.cpython-38.pyc
+hospital/hospital/__pycache__/wsgi.cpython-38.pyc
+hospital/manager_workplace/__pycache__/__init__.cpython-38.pyc
+hospital/manager_workplace/__pycache__/admin.cpython-38.pyc
+hospital/manager_workplace/__pycache__/apps.cpython-38.pyc
+hospital/manager_workplace/__pycache__/choices.cpython-38.pyc
+hospital/manager_workplace/__pycache__/models.cpython-38.pyc
+hospital/manager_workplace/__pycache__/urls.cpython-38.pyc
+hospital/manager_workplace/__pycache__/views.cpython-38.pyc
+/hospital/manager_workplace/migrations

@@ -1,0 +1,28 @@
+{% extends 'list.html' %}
+
+{% block add_button %}
+    <a class="btn btn-primary" href="{% url 'add_visit' %}" role="button">Записать на приём</a>
+    <a class="btn btn-primary" href="{% url 'faces_list' %}" role="button">Добавить врача</a>
+{% endblock add_button %}
+{% block result_list %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Специальность</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in doctors %}
+            <tr>
+                <td>
+                    <a href="{{ item.get_absolute_url }}">{{ item.face.surname }} {{ item.face.name }} {{ item.face.patronymic }}</a>
+                </td>
+                <td>
+                    {{ item.get_speciality_display }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock result_list %}

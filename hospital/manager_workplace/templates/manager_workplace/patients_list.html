@@ -1,0 +1,31 @@
+{% extends 'list.html' %}
+{% block add_button %}
+    <a class="btn btn-primary" href="{% url 'add_visit' %}" role="button">Записать на приём</a>
+    <a class="btn btn-primary" href="{% url 'faces_list' %}" role="button">Добавить пациента</a>
+{% endblock %}
+{% block result_list %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Дата рождения</th>
+            <th>Телефон</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in patients %}
+            <tr>
+                <td>
+                    <a href="{{ item.get_absolute_url }}">{{ item.face.surname }} {{ item.face.name }} {{ item.face.patronymic }}</a>
+                </td>
+                <td>
+                    {{ item.face.date_of_birth }}
+                </td>
+                <td>
+                    {{ item.face.phone|default_if_none:"" }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'list.html' %}
+{% block add_button %}
+    <div class="mb-1">Выберите или создайте новое физ.лицо:</div>
+    <a class="btn btn-primary" href="{% url next_url|add:'_face' %}" role="button">Добавить физ.лицо</a>
+{% endblock %}
+{% block result_list %}
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Дата рождения</th>
+            <th>Телефон</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for item in faces %}
+            <tr>
+                <td>
+                    <a href="{% url next_url item.pk %}">{{ item.surname }} {{ item.name }} {{ item.patronymic }}</a>
+                </td>
+                <td>
+                    {{ item.date_of_birth }}
+                </td>
+                <td>
+                    {{ item.phone|default_if_none:"" }}
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
